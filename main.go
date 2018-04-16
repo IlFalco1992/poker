@@ -5,10 +5,13 @@ import (
 	"math/rand"
 	"strings"
 	"time"
+	"flag"
 )
 
 //Main
 func main() {
+	playersNum := flag.Int("players", 2, "number of players")
+	flag.Parse()
 	rand.Seed(time.Now().UnixNano())
 	values := strings.Split("2-3-4-5-6-7-8-9-10-J-Q-K-A", "-")
 	seeds := strings.Split("HDCS", "")
@@ -23,7 +26,7 @@ func main() {
 		deck[i], deck[v] = deck[v], deck[i]
 	}
 	var hand Hand
-	hand.InitGame(2, deck)
+	hand.InitGame(*playersNum, deck)
 	hand.Flop()
 	hand.Next()
 	hand.Next()
