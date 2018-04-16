@@ -41,6 +41,7 @@ type Point struct{
 	kind uint8
 	high uint8
 	low uint8
+	high_card uint8
 }
 
 type Player struct{
