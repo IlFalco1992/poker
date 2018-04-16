@@ -62,7 +62,7 @@ type Hand struct{
 }
 
 func (hand Hand) String() string{
-	return fmt.Sprintf("deck: %v\npot: %v\nburned: %v\nplayers: %v\nnumber of players: %d", hand.deck, hand.pot, hand.burned, hand.players, hand.playersNum)
+	return fmt.Sprintf("deck: %v\npot: %v\nburned: %v\nplayers: %v\n\nnumber of players: %d", hand.deck, hand.pot, hand.burned, hand.players, hand.playersNum)
 }
 
 func (hand *Hand) InitGame(playersNum int, deck Cards){
